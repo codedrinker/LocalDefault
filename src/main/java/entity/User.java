@@ -1,3 +1,5 @@
+package entity;
+
 import java.util.Comparator;
 
 /**
@@ -30,7 +32,7 @@ public class User{
 
     @Override
     public String toString() {
-        return "User{" +
+        return "entity.User{" +
             "name='" + name + '\'' +
             ", priority=" + priority +
             '}';
