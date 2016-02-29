@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class GuavaCollectionTransformerTest {
     public static void main(String[] args) {
-        final List<Entity> collectionTestEntities = new ArrayList<Entity>();
+        List<Entity> collectionTestEntities = new ArrayList<Entity>();
 
 
         collectionTestEntities.add(new Entity(1, 2));
