@@ -1,6 +1,4 @@
-package entity;
-
-import java.util.Comparator;
+package collection;
 
 /**
  * Created by clwang on 2/1/16.
@@ -32,7 +30,7 @@ public class User{
 
     @Override
     public String toString() {
-        return "entity.User{" +
+        return "collection.User{" +
             "name='" + name + '\'' +
             ", priority=" + priority +
             '}';

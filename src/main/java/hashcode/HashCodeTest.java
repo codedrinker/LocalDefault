@@ -1,4 +1,4 @@
-package entity;
+package hashcode;
 
 /**
  * Created by codedrinker on 2/25/16.

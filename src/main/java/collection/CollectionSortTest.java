@@ -1,7 +1,5 @@
 package collection;
 
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
