@@ -16,10 +16,11 @@ public class CollectionSortTest {
         list.add(new User("clwang7", 7));
 
 
+        System.out.println(list);
 //        Collections.sort(list);
         Collections.sort(list, new Comparator<User>() {
             public int compare(User o1, User o2) {
-                return o2.getPriority() - o1.getPriority();
+                return o2.getPriority()- o1.getPriority();
             }
         });
         System.out.println(list);
