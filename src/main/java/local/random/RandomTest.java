@@ -7,7 +7,7 @@ public class RandomTest {
     public static void main(String[] args) {
         double random = Math.random();
         System.out.println(random);
-        int v = (int)Math.floor(4*random);
+        int v = (int) (4 * random);
         System.out.println(v);
 
     }
