@@ -17,7 +17,7 @@ public class Main {
         System.out.println(jacksonStringByObject);
         SuperClass s = new SuperClass();
         try {
-            BeanUtils.copyProperties(s,subClass);
+            BeanUtils.copyProperties(s, subClass);
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -25,5 +25,6 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println(JsonUtils.getJacksonStringByObject(s));
+        subClass.test();
     }
 }

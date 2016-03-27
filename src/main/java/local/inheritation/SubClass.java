@@ -18,6 +18,7 @@ public class SubClass extends SuperClass {
         this.age = age;
     }
 
+
     @Override
     public String toString() {
         return this.getId() + this.getName() + this.getAge();

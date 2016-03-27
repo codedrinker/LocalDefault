@@ -27,4 +27,8 @@ public class SuperClass {
     public void setName(String name) {
         this.name = name;
     }
+
+    public final void test() {
+        System.out.println("");
+    }
 }
