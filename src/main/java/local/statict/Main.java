@@ -1,4 +1,4 @@
-package local.staticc;
+package local.statict;
 
 /**
  * Created by codedrinker on 3/24/16.
