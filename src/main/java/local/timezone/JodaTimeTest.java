@@ -14,6 +14,9 @@ public class JodaTimeTest {
         DateTimeZone dateTimeZone = DateTimeZone.forID("America/New_York");
         DateTime dateTime = new DateTime(dateTimeZone);
         System.out.println(dateTime.getHourOfDay());
+
+        String s = "America/New_York".replace("/", "_").toLowerCase();
+        System.out.println(s);
     }
     @Test
     public void test1() {
