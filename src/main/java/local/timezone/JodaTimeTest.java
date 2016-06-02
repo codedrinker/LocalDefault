@@ -52,6 +52,25 @@ public class JodaTimeTest {
         System.out.println(dateTime.getHourOfDay());
     }
 
+
+    @Test
+    public void testPacific_Pitcairn() {
+        DateTimeZone dateTimeZone = DateTimeZone.forID("Pacific/Pitcairn");
+        DateTime instant = new DateTime(dateTimeZone);
+        String dtStr = DateTimeFormat.forPattern("yyyyMMdd hh:mm:ss").print(instant);
+        System.out.println(instant.getHourOfDay());
+        System.out.println(dtStr);
+    }
+
+    @Test
+    public void testAsia_Shanghai() {
+        DateTimeZone dateTimeZone = DateTimeZone.forID("Asia/Shanghai");
+        DateTime instant = new DateTime(dateTimeZone);
+        System.out.println(instant.getHourOfDay());
+        String dtStr = DateTimeFormat.forPattern("yyyyMMdd hh:mm:ss").print(instant);
+        System.out.println(dtStr);
+    }
+
     @Test
     public void test_offset() {
         DateTimeZone dateTimeZone = DateTimeZone.getDefault();
@@ -102,5 +121,14 @@ public class JodaTimeTest {
 //            System.out.print("**");
 //            System.out.println(offset / 3600000);
         }
+    }
+    @Test
+    public void testDefault() {
+        DateTimeZone dateTimeZone = DateTimeZone.getDefault();
+        DateTime instant = new DateTime(dateTimeZone);
+        System.out.println(instant.getHourOfDay());
+        String dtStr = DateTimeFormat.forPattern("yyyyMMdd hh:mm:ss").print(instant);
+        System.out.println(System.currentTimeMillis());
+        System.out.println(dtStr);
     }
 }
