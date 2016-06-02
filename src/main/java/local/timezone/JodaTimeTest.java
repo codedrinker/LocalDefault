@@ -54,7 +54,7 @@ public class JodaTimeTest {
 
     @Test
     public void test_offset() {
-        DateTimeZone dateTimeZone = DateTimeZone.forID("Asia/Shanghai");
+        DateTimeZone dateTimeZone = DateTimeZone.getDefault();
         int offset = dateTimeZone.getOffset(System.currentTimeMillis());
         System.out.println(offset / 3600000);
     }
