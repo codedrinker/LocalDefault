@@ -8,4 +8,15 @@ public class C extends C1 implements I1, I2 {
         System.out.println("name");
 //        System.out.println(name);
     }
+    public synchronized void  sync(){
+
+    }
+
+    private  String name;
+
+     {
+     synchronized ("sd"){
+
+     }
+    }
 }

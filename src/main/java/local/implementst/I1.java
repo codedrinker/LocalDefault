@@ -5,4 +5,5 @@ package local.implementst;
  */
 public interface I1 {
     String name = "codemonkeyism";
+
 }
