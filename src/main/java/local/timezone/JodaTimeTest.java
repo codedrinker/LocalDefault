@@ -7,7 +7,9 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * Created by codedrinker on 5/13/16.
@@ -110,18 +112,39 @@ public class JodaTimeTest {
         timezones.add("Etc/GMT-12");
         timezones.add("Etc/GMT-13");
         timezones.add("Etc/GMT-14");
+        timezones.add("America/New_York");
 
         for (String timezoneId : timezones) {
             DateTimeZone dateTimeZone = DateTimeZone.forID(timezoneId);
-//            int offset = dateTimeZone.getOffset(System.currentTimeMillis());
+            int offset = dateTimeZone.getOffset(System.currentTimeMillis());
+
+            System.out.println(offset / 3600000);
             System.out.print(timezoneId+"----"+new DateTime(dateTimeZone).getHourOfDay());
             String dtStr = DateTimeFormat.forPattern("yyyyMMdd hh:mm:ss").print(new DateTime(dateTimeZone));
             System.out.println(dtStr);
 //            System.out.print(hourOfDay);
 //            System.out.print("**");
-//            System.out.println(offset / 3600000);
+            System.out.println(offset / 3600000);
+
+
         }
     }
+
+    @Test
+    public void testTimezone(){
+        String timezone = "America/New_York";
+        DateTimeZone dateTimeZone = DateTimeZone.forID(timezone);
+        int offset = dateTimeZone.getOffset(System.currentTimeMillis());
+
+        System.out.println(offset / 3600000);
+
+        int i = TimeZone.getTimeZone(timezone).getOffset(new Date().getTime()) / 1000 / 3600;
+        System.out.println(i);
+
+        int i1 = TimeZone.getTimeZone(timezone).getRawOffset() / 1000 / 3600;
+        System.out.println(i1);
+    }
+
     @Test
     public void testDefault() {
         DateTimeZone dateTimeZone = DateTimeZone.getDefault();
