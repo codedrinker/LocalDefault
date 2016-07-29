@@ -1,9 +1,5 @@
 package local.regext;
 
-import com.sun.xml.internal.txw2.TXW;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
