@@ -178,7 +178,7 @@ public class JodaTimeTest {
 
     @Test
     public void testTimezone() {
-        String timezone = "America/New_York";
+        String timezone = "GMT-08:00";
         DateTimeZone dateTimeZone = DateTimeZone.forID(timezone);
         int offset = dateTimeZone.getOffset(System.currentTimeMillis());
 
