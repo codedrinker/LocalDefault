@@ -3,7 +3,6 @@ package local.timezone;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -116,22 +115,69 @@ public class JodaTimeTest {
 
         for (String timezoneId : timezones) {
             DateTimeZone dateTimeZone = DateTimeZone.forID(timezoneId);
+            String dtStr = DateTimeFormat.forPattern("yyyyMMdd hh:mm:ss").print(new DateTime(1473098400000l, dateTimeZone));
+            System.out.print(timezoneId);
+            System.out.print(" - ");
+            System.out.println(dtStr);
+        }
+    }
+
+    @Test
+    public void test_get_current_time_for_each_timezone() {
+        List<String> timezones = new ArrayList();
+
+
+        timezones.add("Etc/GMT+12");
+        timezones.add("Etc/GMT+11");
+        timezones.add("Etc/GMT+10");
+        timezones.add("Etc/GMT+9");
+        timezones.add("Etc/GMT+8");
+        timezones.add("Etc/GMT+7");
+        timezones.add("Etc/GMT+6");
+        timezones.add("Etc/GMT+5");
+        timezones.add("Etc/GMT+4");
+        timezones.add("Etc/GMT+3");
+        timezones.add("Etc/GMT+2");
+        timezones.add("Etc/GMT+1");
+        timezones.add("Etc/GMT+0");
+        timezones.add("Etc/GMT-1");
+        timezones.add("Etc/GMT-2");
+        timezones.add("Etc/GMT-3");
+        timezones.add("Etc/GMT-4");
+        timezones.add("Etc/GMT-5");
+        timezones.add("Etc/GMT-6");
+        timezones.add("Etc/GMT-7");
+        timezones.add("Etc/GMT-8");
+        timezones.add("Etc/GMT-9");
+        timezones.add("Etc/GMT-10");
+        timezones.add("Etc/GMT-11");
+        timezones.add("Etc/GMT-12");
+        timezones.add("Etc/GMT-13");
+        timezones.add("Etc/GMT-14");
+        timezones.add("America/New_York");
+
+        for (String timezoneId : timezones) {
+            DateTimeZone dateTimeZone = DateTimeZone.forID(timezoneId);
             int offset = dateTimeZone.getOffset(System.currentTimeMillis());
 
             System.out.println(offset / 3600000);
-            System.out.print(timezoneId+"----"+new DateTime(dateTimeZone).getHourOfDay());
+            System.out.print(timezoneId + "----" + new DateTime(dateTimeZone).getHourOfDay());
             String dtStr = DateTimeFormat.forPattern("yyyyMMdd hh:mm:ss").print(new DateTime(dateTimeZone));
             System.out.println(dtStr);
 //            System.out.print(hourOfDay);
 //            System.out.print("**");
             System.out.println(offset / 3600000);
-
-
         }
     }
 
     @Test
-    public void testTimezone(){
+    public void testS() {
+        String currentDate = DateTimeFormat.forPattern("yyyy-MM-dd").print(new DateTime().minusDays(1));
+        System.out.println(currentDate);
+    }
+
+    @Test
+    public void testTimezone() {
         String timezone = "America/New_York";
         DateTimeZone dateTimeZone = DateTimeZone.forID(timezone);
         int offset = dateTimeZone.getOffset(System.currentTimeMillis());
