@@ -1,7 +1,5 @@
 package local.clone;
 
-import local.collection.CollectionSortTest;
-
 /**
  * Created by codedrinker on 10/16/16.
  */
@@ -9,18 +7,20 @@ public class CloneDepth {
     public static void main(String[] args) {
         Entity entity = new Entity();
         entity.setId("userid");
-        entity.setInnerClass(new InnerClass("inner class origin"));
+        entity.setInnerClass(new InnerClass("origin"));
         System.out.println(entity.getId());
         System.out.println(entity.getInnerClass().getId());
         Entity clone = entity.clone();
         clone.setId("cloneId");
-        clone.getInnerClass().setId("clone inner class");
+        clone.getInnerClass().setId("clone inner");
         System.out.println(entity.getId());
         System.out.println(entity.getInnerClass().getId());
+
+        System.out.println(clone);
     }
 }
 
-class InnerClass implements Cloneable{
+class InnerClass implements Cloneable {
     public InnerClass(String id) {
         this.id = id;
     }
@@ -46,6 +46,14 @@ class InnerClass implements Cloneable{
 }
 
 class Entity implements Cloneable {
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "id='" + id + '\'' +
+                ", innerClass=" + innerClass +
+                '}';
+    }
+
     public InnerClass getInnerClass() {
         return innerClass;
     }
@@ -76,7 +84,7 @@ class Entity implements Cloneable {
     public Entity clone() {
         try {
             Entity clone = (Entity) super.clone();
-//            clone.setInnerClass(this.innerClass.clone());
+            clone.setInnerClass(this.innerClass.clone());
             return clone;
 
         } catch (CloneNotSupportedException e) {
