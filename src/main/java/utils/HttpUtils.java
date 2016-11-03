@@ -85,7 +85,7 @@ public class HttpUtils {
 
             //定义JSON解析,解析出自己想要的东西
             Gson gson = new GsonBuilder().create();
-            Result result = gson.fromJson(EntityUtils.toString(response.getEntity()), Result.class);
+            Result result = gson.fromJson("{\"data\":{\"type\":\"VIDEO\"}}", Result.class);
             return result;
 
         } catch (ClientProtocolException e) {
