@@ -1,7 +1,10 @@
 package local.thread;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -12,15 +15,18 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolTest {
     ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 100, 5, TimeUnit.MINUTES, new LinkedBlockingQueue<Runnable>(10), new ThreadPoolExecutor.CallerRunsPolicy());
 
+
     class ThreadCountPrinter implements Runnable {
         public ThreadCountPrinter(int count) {
             this.count = count;
         }
 
         private int count;
-
         @Override
         public void run() {
+
+            Executors.newCachedThreadPool();
+            Collections.synchronizedSet(new HashSet());
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
