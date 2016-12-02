@@ -3,6 +3,9 @@ package local.stringt;
 import com.google.common.base.Joiner;
 import org.apache.commons.lang.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by codedrinker on 11/29/16.
  */
@@ -22,5 +25,12 @@ public class StringArgumentsTest {
 
         String append1 = new StringArgumentsTest().append("1", "2");
         System.out.println(append1);
+
+        final String[] a = new String[]{"1", "2"};
+        System.out.println(new StringArgumentsTest().append(a));
+
+        List<String> list = new ArrayList<String>() {{
+            add("23");
+        }};
     }
 }
