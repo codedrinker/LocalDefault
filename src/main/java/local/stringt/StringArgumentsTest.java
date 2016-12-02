@@ -11,6 +11,14 @@ import java.util.List;
  */
 public class StringArgumentsTest {
     public String append(String... arguments) {
+
+        if (arguments == null) {
+            System.out.println("null");
+        }
+        if (arguments.length == 0) {
+            System.out.println(0);
+        }
+
         String source = "SOURCE";
         String join = Joiner.on("_").join(arguments);
         if (StringUtils.isNotBlank(join)) {
