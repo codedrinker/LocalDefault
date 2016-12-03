@@ -2,9 +2,6 @@ package local.arraylist;
 
 import com.google.common.collect.Lists;
 
-import java.nio.channels.Pipe;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -21,7 +18,6 @@ public class ArrayListSublistTest {
         objects.add("6");
         objects.add("7");
         System.out.println(objects);
-        System.out.println(4+2+""+1);
 
         if (objects.size() > 6) {
             objects = objects.subList(0, 6);
