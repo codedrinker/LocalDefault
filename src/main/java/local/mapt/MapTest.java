@@ -1,9 +1,6 @@
 package local.mapt;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -29,5 +26,8 @@ public class MapTest {
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
         copyOnWriteArrayList.add(2);
         System.out.println(copyOnWriteArrayList);
+
+        List<Object> objectList = Collections.synchronizedList(list);
+        Collection<Object> objectCollection = Collections.synchronizedCollection(list);
     }
 }
