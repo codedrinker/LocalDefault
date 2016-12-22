@@ -10,7 +10,7 @@ public class BooleanValueOfTest {
         Boolean b = null;
         System.out.println(b);
 
-        boolean aTrue = BooleanUtils.isTrue(b);
+        boolean aTrue = BooleanUtils.isFalse(b);
         System.out.println(aTrue);
 
 
