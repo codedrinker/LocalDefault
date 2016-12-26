@@ -7,12 +7,8 @@ import org.apache.commons.lang.BooleanUtils;
  */
 public class BooleanValueOfTest {
     public static void main(String[] args) {
-        Boolean b = null;
-        System.out.println(b);
-
-        boolean aTrue = BooleanUtils.isFalse(b);
-        System.out.println(aTrue);
-
-
+        System.out.println(BooleanUtils.isTrue(null));
+        System.out.println(BooleanUtils.isTrue(false));
+        System.out.println(BooleanUtils.isTrue(true));
     }
 }
