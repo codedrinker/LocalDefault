@@ -1,4 +1,4 @@
-package local.exception;
+package local.exceptiont;
 
 import java.util.ArrayList;
 

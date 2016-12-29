@@ -1,4 +1,4 @@
-package local.exception;
+package local.exceptiont;
 
 /**
  * Created by codedrinker on 3/27/16.
