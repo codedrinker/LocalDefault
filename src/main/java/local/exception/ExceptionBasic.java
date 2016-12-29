@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by codedrinker on 3/3/16.
  */
-public class ExceptionTest {
+public class ExceptionBasic {
     public static void main(String[] args) {
         ArrayList<String> objects = new ArrayList<String>();
         objects.add("1");

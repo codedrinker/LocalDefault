@@ -3,7 +3,7 @@ package local.exception;
 /**
  * Created by codedrinker on 3/27/16.
  */
-public class ThrowFinallyExceptionTest {
+public class ExceptionFinallyBlock {
     public static String test() throws Exception {
         try {
             throw new RuntimeException("");
