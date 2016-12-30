@@ -1,4 +1,4 @@
-package local.arraylist;
+package local.arraylistt;
 
 import com.google.common.collect.Lists;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by codedrinker on 4/12/16.
  */
-public class ArrayListSublistTest {
+public class ArrayListSubList {
     public static void main(String[] args) {
         List<String> objects = Lists.newArrayList();
         objects.add("1");

@@ -1,4 +1,4 @@
-package local.arraylist;
+package local.arraylistt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by codedrinker on 11/15/16.
  */
-public class ArrayListRemoveTest {
+public class ArrayListRemove {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList() {{
             add(1);

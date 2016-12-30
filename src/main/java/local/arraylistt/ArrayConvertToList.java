@@ -1,4 +1,4 @@
-package local.arraylist;
+package local.arraylistt;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by codedrinker on 10/29/16.
  */
-public class ArrayToList {
+public class ArrayConvertToList {
     public static void main(String[] args) {
         String[] array = new String[]{"hello", "world"};
         List<String> list = Arrays.asList(array);
