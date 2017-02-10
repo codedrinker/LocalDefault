@@ -26,7 +26,7 @@ public class RabbitMQDirectRouteConsumerB {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 String message = new String(body, "UTF-8");
-                System.out.println(this.getClass().getCanonicalName() + " Received '" + envelope.getRoutingKey() + "':'" + message + "'" + " at " + System.currentTimeMillis());
+                System.out.println(new RabbitMQDirectRouteConsumerB().getClass().getCanonicalName() + " Received '" + envelope.getRoutingKey() + "':'" + message + "'" + " at " + System.currentTimeMillis());
                 channel.basicReject(envelope.getDeliveryTag(), true);
 //                channel.basicAck(envelope.getDeliveryTag(), false);
             }
