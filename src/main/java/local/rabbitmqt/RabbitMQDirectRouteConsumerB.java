@@ -10,17 +10,17 @@ import java.util.Map;
  * Created by codedrinker on 10/02/2017.
  */
 public class RabbitMQDirectRouteConsumerB {
-
-    private static final String EXCHANGE_NAME = "direct_exchange";
-
+    private static final String QUEUE_NAME = "direct_exchange_info_queue_2";
     public static void main(String[] argv) throws Exception {
         Connection connection = RabbitMQFactory.getFactory().newConnection();
         final Channel channel = connection.createChannel();
-        channel.exchangeDeclare(EXCHANGE_NAME, "direct", true);
+        channel.exchangeDeclare(RabbitMQDirectRouteProducer.EXCHANGE_NAME, "direct", true);
         Map args = new HashMap();
         args.put("x-message-ttl", 60000);
-        channel.queueDeclare("direct_exchange_info_queue", true, false, false, args);
-        channel.queueBind("direct_exchange_info_queue", EXCHANGE_NAME, "info");
+        args.put("x-dead-letter-exchange", RabbitMQDirectRouteProducer.DEAD_LETTER_EXCHANGE);
+        args.put("x-dead-letter-routing-key", RabbitMQDirectRouteProducer.DEAD_LETTER_ROUTE_KEY);
+        channel.queueDeclare(QUEUE_NAME, true, false, false, args);
+        channel.queueBind(QUEUE_NAME, RabbitMQDirectRouteProducer.EXCHANGE_NAME, "info");
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         Consumer consumer = new DefaultConsumer(channel) {
             @Override
@@ -31,6 +31,6 @@ public class RabbitMQDirectRouteConsumerB {
 //                channel.basicAck(envelope.getDeliveryTag(), false);
             }
         };
-        channel.basicConsume("direct_exchange_info_queue", false, consumer);
+        channel.basicConsume(QUEUE_NAME, false, consumer);
     }
 }

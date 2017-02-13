@@ -3,19 +3,23 @@ package local.rabbitmqt;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by codedrinker on 10/02/2017.
  */
 public class RabbitMQDirectRouteDeadLetter {
-
-    private static final String EXCHANGE_NAME = "dead_letter_direct_exchange";
-    private static final String QUEUE_NAME = "dead_letter_direct_exchange_queue_name";
+    private static final String QUEUE_NAME = "dead_direct_dead_letter_queue";
 
     public static void main(String[] argv) throws Exception {
         Connection connection = RabbitMQFactory.getFactory().newConnection();
         final Channel channel = connection.createChannel();
-        channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "dead_letter");
+
+        Map args = new HashMap();
+        args.put("x-message-ttl", 60000);
+        channel.queueDeclare(QUEUE_NAME, true, false, false, args);
+        channel.queueBind(QUEUE_NAME, RabbitMQDirectRouteProducer.DEAD_LETTER_EXCHANGE, RabbitMQDirectRouteProducer.DEAD_LETTER_ROUTE_KEY);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         Consumer consumer = new DefaultConsumer(channel) {
             @Override
