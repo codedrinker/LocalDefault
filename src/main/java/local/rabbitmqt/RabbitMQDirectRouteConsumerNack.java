@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by codedrinker on 10/02/2017.
  */
-public class RabbitMQDirectRouteConsumerB {
+public class RabbitMQDirectRouteConsumerNack {
     private static final String QUEUE_NAME = "direct_exchange_info_queue_2";
 
     public static void main(String[] argv) throws Exception {
@@ -27,8 +27,8 @@ public class RabbitMQDirectRouteConsumerB {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 String message = new String(body, "UTF-8");
-                System.out.println(new RabbitMQDirectRouteConsumerB().getClass().getCanonicalName() + " Received '" + envelope.getRoutingKey() + "':'" + message + "'" + " at " + System.currentTimeMillis());
-                channel.basicReject(envelope.getDeliveryTag(), true);
+                System.out.println(new RabbitMQDirectRouteConsumerNack().getClass().getCanonicalName() + " Received '" + envelope.getRoutingKey() + "':'" + message + "'" + " at " + System.currentTimeMillis());
+                channel.basicNack(envelope.getDeliveryTag(), true, true);
 //                channel.basicAck(envelope.getDeliveryTag(), false);
             }
         };

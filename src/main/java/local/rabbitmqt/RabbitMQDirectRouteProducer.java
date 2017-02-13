@@ -30,7 +30,7 @@ public class RabbitMQDirectRouteProducer {
                     new AMQP.BasicProperties.Builder().deliveryMode(2).expiration("60000").priority(1).build(),
                     (message + " : " + i).getBytes("UTF-8"));
             System.out.println(new RabbitMQDirectRouteProducer().getClass().getCanonicalName() + " Sent '" + severity + "':'" + (message + " : " + i) + "' " + System.currentTimeMillis());
-            Thread.sleep(2000);
+            Thread.sleep(10000);
             i++;
         }
     }
