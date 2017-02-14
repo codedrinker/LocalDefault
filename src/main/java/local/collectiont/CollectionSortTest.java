@@ -1,4 +1,4 @@
-package local.collection;
+package local.collectiont;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +9,6 @@ import java.util.Comparator;
  */
 public class CollectionSortTest {
     public static void main(String[] args) {
-
         ArrayList<String> strings = new ArrayList<>();
         strings.add("0.1");
         strings.add("0.1.1");

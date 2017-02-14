@@ -1,4 +1,4 @@
-package local.clone;
+package local.clonet;
 
 /**
  * Created by codedrinker on 10/16/16.

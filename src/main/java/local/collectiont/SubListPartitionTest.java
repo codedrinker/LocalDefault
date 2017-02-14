@@ -1,4 +1,4 @@
-package local.collection;
+package local.collectiont;
 
 import com.google.common.collect.Lists;
 

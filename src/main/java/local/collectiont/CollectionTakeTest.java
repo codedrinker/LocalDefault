@@ -1,4 +1,4 @@
-package local.collection;
+package local.collectiont;
 
 import java.util.ArrayList;
 import java.util.List;
