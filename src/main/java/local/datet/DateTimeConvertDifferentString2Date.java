@@ -4,7 +4,7 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-public class DateTimeConvertDifferentString2SameDate {
+public class DateTimeConvertDifferentString2Date {
     String patterns[] = new String[]{
             "MM/dd/yy HH:mm:ss",
             "yy/MM/dd HH:mm:ss",
@@ -31,7 +31,7 @@ public class DateTimeConvertDifferentString2SameDate {
                 "2015-04-23 10:20:33"
         };
         for (String str : dateStrings) {
-            DateTime parse = new DateTimeConvertDifferentString2SameDate().parse(str);
+            DateTime parse = new DateTimeConvertDifferentString2Date().parse(str);
             System.out.println(parse);
         }
     }
