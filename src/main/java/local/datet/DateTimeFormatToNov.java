@@ -1,4 +1,4 @@
-package local.date;
+package local.datet;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;

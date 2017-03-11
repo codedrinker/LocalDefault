@@ -1,4 +1,4 @@
-package local.date;
+package local.datet;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
