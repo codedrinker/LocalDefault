@@ -3,6 +3,7 @@ package local.mapt;
 import org.apache.commons.collections.map.ListOrderedMap;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -18,5 +19,6 @@ public class SotedMapTest {
         Map<Integer,Integer> order = new ListOrderedMap();
         order.put(2,2);
         order.put(1,1);
+        System.out.println(order);
     }
 }
