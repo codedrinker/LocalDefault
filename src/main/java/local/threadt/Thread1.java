@@ -1,4 +1,4 @@
-package local.thread;
+package local.threadt;
 
 /**
  * Created by codedrinker on 5/14/16.

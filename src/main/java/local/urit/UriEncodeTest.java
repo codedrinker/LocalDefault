@@ -1,4 +1,4 @@
-package local.uri;
+package local.urit;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

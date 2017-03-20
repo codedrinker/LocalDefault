@@ -1,4 +1,4 @@
-package local.thread;
+package local.threadt;
 
 import java.util.ArrayList;
 import java.util.Collections;

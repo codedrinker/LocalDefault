@@ -1,4 +1,4 @@
-package local.singleton;
+package local.singletont;
 
 import java.util.Random;
 
