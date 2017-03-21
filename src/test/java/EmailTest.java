@@ -1,4 +1,4 @@
-import local.email.Email;
+import local.emailt.Email;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
