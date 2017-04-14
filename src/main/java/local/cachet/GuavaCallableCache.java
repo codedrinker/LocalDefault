@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class GuavaCallableCache {
     public static void main(String[] args) {
-        String key = "github";
+        final String key = "github";
         Cache<String, Optional<String>> cache = CacheBuilder.newBuilder()
                 .expireAfterWrite(3, TimeUnit.SECONDS)
                 .removalListener(new RemovalListener<String, Optional<String>>() {
@@ -47,7 +47,7 @@ public class GuavaCallableCache {
                 }
             }).orNull());
             Thread.sleep(2000);
-            String nullKey = "email";
+            final String nullKey = "email";
             optional = cache.get(nullKey, new Callable<Optional<String>>() {
                 @Override
                 public Optional<String> call() throws Exception {
