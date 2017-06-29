@@ -1,6 +1,7 @@
 package local.mapt;
 
-import java.util.*;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * Created by codedrinker on 11/03/2017.
@@ -13,14 +14,13 @@ public class RemoveKeyByCompare {
         map.put(2, 2);
         map.put(3, 3);
         map.put(5, 5);
-        map.put(4, 4);
         map.put(7, 7);
         System.out.println(map);
 
         SortedMap<Integer, Integer> integerIntegerSortedMap = map.tailMap(3);
         System.out.println(integerIntegerSortedMap);
 
-        map.tailMap(7, false).clear();
+        map.tailMap(4, false).clear();
         System.out.println(map);
 
         map.headMap(2, true).clear();
