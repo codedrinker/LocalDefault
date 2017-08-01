@@ -1,5 +1,7 @@
 package local.mapt;
 
+import java.util.Map;
+import java.util.NavigableMap;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -23,7 +25,9 @@ public class RemoveKeyByCompare {
         map.tailMap(4, false).clear();
         System.out.println(map);
 
-        map.headMap(2, true).clear();
+        NavigableMap<Integer, Integer> integerIntegerNavigableMap = map.headMap(4, true);
+        Map.Entry<Integer, Integer> integerIntegerEntry = integerIntegerNavigableMap.lastEntry();
+        System.out.println(integerIntegerEntry);
         System.out.println(map);
     }
 }
