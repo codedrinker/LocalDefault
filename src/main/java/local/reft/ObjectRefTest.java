@@ -1,19 +1,17 @@
-package local.arrayt;
-
-import java.util.Arrays;
+package local.reft;
 
 /**
  * Created by codedrinker on 19/11/2017.
  */
-public class ArrayRefTest {
+public class ObjectRefTest {
     public static void main(String[] args) {
-        Node[] oldNodes = {new Node("wcl"), new Node("xyn")};
-        System.out.println(Arrays.toString(oldNodes));
-        Node[] copy = oldNodes;
-        oldNodes = new Node[]{new Node("lmh")};
-        System.out.println(Arrays.toString(oldNodes));
-        System.out.println(Arrays.toString(copy));
-
+        Node oldNode = new Node("wcl");
+        System.out.println(oldNode);
+        Node copy = oldNode;
+        System.out.println(copy);
+        oldNode = new Node("xyn");
+        System.out.println(copy);
+        System.out.println(oldNode);
     }
 
     static class Node {
