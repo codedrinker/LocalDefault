@@ -2,6 +2,7 @@ package local.arraylistt;
 
 import com.google.common.collect.Lists;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,5 +29,6 @@ public class ArrayListSubList {
         }
 
         System.out.println(objects);
+        Arrays.binarySearch(objects.toArray(), "");
     }
 }
