@@ -41,7 +41,7 @@ public class JStackTest {
     }
 
     public static void main(String[] args) throws Exception {
-        Thread.sleep(30000L);
+//        Thread.sleep(30000L);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         br.readLine();
         createBusyThread();
